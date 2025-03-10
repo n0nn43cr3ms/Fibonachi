@@ -1,17 +1,23 @@
 ﻿using FibonachiCalculator;
-    
+using Validation;
+
+
 namespace ConsoleApp1
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите n:");
-            string? parameter = Console.ReadLine();
-            int numberParameter = int.Parse(parameter!);
-            FibonachiCalculator calculator = new FibonachiCalculator();
-            int result = calculator.Calculate(FibonachiCalculator);
-            Console.WriteLine(result);
+            Console.WriteLine("Порядок чисел Фибоначчи");
+            string parameter;
+            var validator = new Validator();
+            do
+            {
+                parameter = Console.ReadLine()!;
+            } while (!validator.IsNumber(parameter));
+            var calculator = new FibonachiMath();
+            var result = calculator.Calculate(int.Parse(parameter));
+            Console.WriteLine();
             Console.ReadKey();
         }
     }
