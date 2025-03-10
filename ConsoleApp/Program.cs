@@ -8,7 +8,8 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Порядок чисел Фибоначчи");
+            Console.WriteLine("Программа для рассчёта последовательности Фибоначчи");
+            Console.WriteLine("Введите n: ");
             string parameter;
             var validator = new Validator();
             do
@@ -16,6 +17,7 @@ namespace ConsoleApp1
                 parameter = Console.ReadLine()!;
             } while (!validator.IsNumber(parameter));
             var calculator = new FibonachiMath();
+            Console.WriteLine("Порядок чисел Фибоначчи ");
             var result = calculator.Calculate(int.Parse(parameter));
             Console.WriteLine();
             Console.ReadKey();

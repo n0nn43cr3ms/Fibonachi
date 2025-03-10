@@ -12,7 +12,7 @@
                 int sum = firstNumber + SecondNumber;
                 firstNumber = SecondNumber;
                 SecondNumber = sum;
-                Console.WriteLine(SecondNumber);
+                Console.WriteLine(SecondNumber);             
             }
             return numberFibonachi;
         }
